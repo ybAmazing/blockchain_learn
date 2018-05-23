@@ -136,7 +136,8 @@ func (bci *BlockchainIterator) FindUTXO(address string) []UTXO {
 }
 
 func (bc *BlockChain) GetBalance(address string) int {
-	bci := &BlockchainIterator{bc.tip, bc.db}
+	// bci := &BlockchainIterator{bc.tip, bc.db}
+	bci := NewBlockchainIterator(bc)
 
 	utxos := bci.FindUTXO(address)
 	balance := 0

@@ -30,7 +30,6 @@ func (i *BlockchainIterator) Next() *Block {
 	return block
 }
 
-// this function is used to print info of block
 func PrintBlockInfo(block *Block) {
 
 	fmt.Printf("previous hash : %x\n", block.PreBlockHash)

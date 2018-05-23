@@ -28,10 +28,8 @@ func NewCoinbaseTx(to, data string) *Transaction {
 		data = fmt.Sprintf("Reward to '%s'", to)
 	}
 
-	// txin := TxInput{[]byte{}, -1, []byte{}, []byte{}}
 	txout := TxOutput{20, GetPubKeyHashFromAddr(to)}
 
-	//tx := &Transaction{[]byte{}, []TxInput{txin}, []TxOutput{txout}}
 	tx := &Transaction{[]byte{}, []TxInput{}, []TxOutput{txout}}
 
 	tx.SetID()
