@@ -78,7 +78,12 @@ func DeserializeUTXOS(buffer []byte) []UTXO {
 
 	decoder := gob.NewDecoder(bytes.NewReader(buffer))
 
-	decoder.Decode(utxos)
+	err := decoder.Decode(&utxos)
+
+	if err != nil {
+		fmt.Println("Err is ", err)
+		os.Exit(1)
+	}
 
 	return utxos
 }
